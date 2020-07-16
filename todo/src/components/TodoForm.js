@@ -9,7 +9,13 @@ function TodoForm() {
   const [newTodo, setNewTodo] = useState(""); 
 
   const handleChanges = e => {
+    e.preventDefault(); 
     setNewTodo(e.target.value); 
+  }
+
+  const handleSubmit = e => {
+    e.preventDefault(); 
+    dispatch({ type: "ADD_TODO", payload: newTodo})
   }
 
   return (
@@ -19,11 +25,11 @@ function TodoForm() {
         <input
           className="todo-input"
           type="text"
-          name="todoInput"
+          name="newTodo"
           value={newTodo}
           onChange={handleChanges}
         /> 
-        <button onClick={() => dispatch({ type: "ADD_TODO" })} >
+        <button onClick={(e) => {handleSubmit(e)}}>
           Submit
         </button>  
         <Todo todoArray={state.todos}/>
