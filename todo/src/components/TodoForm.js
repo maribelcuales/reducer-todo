@@ -8,6 +8,10 @@ function TodoForm() {
 
   const [newTodo, setNewTodo] = useState(""); 
 
+  const handleChanges = e => {
+    setNewTodo(e.target.value); 
+  }
+
   return (
     <div>
       <h3>Add Todo Form</h3>
@@ -17,7 +21,7 @@ function TodoForm() {
           type="text"
           name="todoInput"
           value={newTodo}
-          // onChange={handleChanges}
+          onChange={handleChanges}
         /> 
         <button>Submit</button>  
         <Todo todoArray={state.todos}/>
