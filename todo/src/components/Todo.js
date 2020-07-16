@@ -1,6 +1,7 @@
 import React from "react"; 
 
 const Todo = props => {
+  console.log('Todo List', props.todoArray)
   return (
     <div>
       {props.todoArray.map(todo => (
