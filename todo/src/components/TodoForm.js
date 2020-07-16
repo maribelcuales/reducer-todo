@@ -23,7 +23,9 @@ function TodoForm() {
           value={newTodo}
           onChange={handleChanges}
         /> 
-        <button>Submit</button>  
+        <button onClick={() => dispatch({ type: "ADD_TODO" })} >
+          Submit
+        </button>  
         <Todo todoArray={state.todos}/>
       </form>
     </div>
