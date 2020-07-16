@@ -1,5 +1,3 @@
-import React from "react"; 
-
 
 const initialState = {
   todos: [
@@ -19,17 +17,18 @@ const initialState = {
 const reducer = (state, action) => {
   switch (action.type) {
     case "ADD_TODO":
-      const newTodo = {
-        item: "",
+      const addTodo = {
+        item: action.payload,
         completed: false,
         id: Date.now()
       }
       return {
         ...state,
-        todos: [...state.todo, newTodo]
+        todos: [...state.todos, addTodo]
       };
+    default: 
+      return state; 
   }
-  return state; 
 }; 
 
 export { initialState, reducer}; 
