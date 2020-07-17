@@ -14,6 +14,14 @@ const Todo = props => {
           <ul className="todo-item">{todo.item}</ul>
         </div>
         )})}
+        <div>
+          <button 
+            className="clear-button"
+            onClick={() => props.clearCompleted(props.todoArray.completed) 
+          }>
+            Clear Completed
+          </button>
+        </div>
     </div>
   )
 }
