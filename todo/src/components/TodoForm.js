@@ -18,6 +18,11 @@ function TodoForm() {
     dispatch({ type: "ADD_TODO", payload: newTodo})
   }
 
+  const toggleItem = item => {
+    e.preventDefault();
+    dispatch({ type: "TOGGLE_TODO", payload: item })
+  }
+
   return (
     <div>
       <h3>Add Todo Form</h3>
@@ -32,7 +37,10 @@ function TodoForm() {
         <button onClick={(e) => {handleSubmit(e)}}>
           Submit
         </button>  
-        <Todo todoArray={state.todos}/>
+        <Todo 
+          todoArray={state.todos} 
+          toggleItem={toggleItem}
+        />
       </form>
     </div>
   )
