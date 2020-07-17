@@ -1,11 +1,17 @@
 import React from "react"; 
 
 const Todo = props => {
-  console.log('Todo List', props.todoArray)
+  console.log(props.toggleItem); 
   return (
-    <div>
+    <div className="todo-list">
       {props.todoArray.map(todo => (
-        <h2>Todo Item: {todo.item}</h2>
+        <div 
+          key={todo.id}
+          onClick={() => props.toggleItem(todo.id)} 
+          className={`todo${todo.completed ? "completed" : ""}`
+        }> 
+          <h2>{todo.item}</h2>
+        </div>
       ))}
     </div>
   )
