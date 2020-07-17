@@ -40,6 +40,7 @@ button {
   padding-left: 8px;
   cursor: pointer;
   font-weight: bold;
+  margin-top: 15px; 
 }
 
 .todo.completed {
@@ -50,12 +51,12 @@ button {
 
 .clear-button {
   background-color: #9e2a2b;
-  border: 1px solid #e07a5f;
+  border: 1px solid #e64944;
   width: 200px; 
   margin-top: 30px;
   font-size: 16px;
   padding-top: 10px; 
   padding-bottom: 10px;
   cursor: pointer;
-  outline: #e07a5f;
+  outline: #e64944;
 }
