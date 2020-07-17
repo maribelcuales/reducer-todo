@@ -1,4 +1,5 @@
-import React from "react"; 
+import React from "react";
+import './styles.css'
 
 const Todo = props => {
   console.log(props.toggleItem); 
