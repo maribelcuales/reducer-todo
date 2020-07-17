@@ -25,7 +25,6 @@ function TodoForm() {
 
   return (
     <div className="todo-form">
-      <h3>Add Todo Form</h3>
       <form>
         <input
           className="todo-input"
@@ -35,7 +34,7 @@ function TodoForm() {
           onChange={handleChanges}
         /> 
         <button onClick={(e) => {handleSubmit(e)}}>
-          Submit
+          Add Todo
         </button>
       </form>
       <div className="todo-container">
