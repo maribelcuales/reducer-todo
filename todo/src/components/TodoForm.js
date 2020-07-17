@@ -23,6 +23,10 @@ function TodoForm() {
     dispatch({ type: "TOGGLE_TODO", payload: item })
   }
 
+  const clearCompleted = e => {
+    dispatch({ type: "CLEAR_COMPLETED" })
+  }
+
   return (
     <div className="todo-form">
       <form>
@@ -41,6 +45,7 @@ function TodoForm() {
         <Todo 
           todoArray={state.todos} 
           toggleItem={toggleItem}
+          clearCompleted={clearCompleted}
         />
       </div>
     </div>
