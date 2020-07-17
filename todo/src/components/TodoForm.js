@@ -1,6 +1,7 @@
 import React, { useState, useReducer } from "react"; 
 import { reducer, initialState } from "../reducers/reducer"; 
 import Todo from './Todo';
+import './styles.css'; 
 
 function TodoForm() {
   const [state, dispatch] = useReducer(reducer, initialState); 
@@ -19,12 +20,11 @@ function TodoForm() {
   }
 
   const toggleItem = item => {
-    e.preventDefault();
     dispatch({ type: "TOGGLE_TODO", payload: item })
   }
 
   return (
-    <div>
+    <div className="todo-form">
       <h3>Add Todo Form</h3>
       <form>
         <input
@@ -36,12 +36,14 @@ function TodoForm() {
         /> 
         <button onClick={(e) => {handleSubmit(e)}}>
           Submit
-        </button>  
+        </button>
+      </form>
+      <div className="todo-container">
         <Todo 
           todoArray={state.todos} 
           toggleItem={toggleItem}
         />
-      </form>
+      </div>
     </div>
   )
 };
