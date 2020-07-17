@@ -26,6 +26,21 @@ const reducer = (state, action) => {
         ...state,
         todos: [...state.todos, addTodo]
       };
+    case "TOGGLE_TODO":
+      return {
+        ...state,
+        todos: state.todos.map(item => {
+          if (action.payload === item.id ) {
+            return {
+              ...item,
+              completed: !item.completed
+            }
+          } 
+          return {
+            ...item
+          }
+        })
+      }; 
     default: 
       return state; 
   }
